@@ -1,0 +1,79 @@
+/*Internal Database Schema to hold Quiz and Poll*/
+
+/*********************/
+PredefinedQuiz:              A map of <int, list<char*>>
+/******************/
+
+<Key - QuizNumber>
+Value
+1. QuizStatement
+2.Choice A
+3.Choice B
+4.Choice C
+5. Choice D
+6. CorrectAnswer
+7. QuizStatus // This field is migrated to QuizPerformance Table
+
+
+/***************/
+QuizOpenOrClose      //An array with 300 elements for 100 predefined Quiz
+/**************/
+1. ActualQuizNumber
+2. CorrectAnswer
+3. OpenOrClose //1 = Open, 0 = Close
+
+
+
+/*********************/
+QuizPerformance:              A map of <int, list<int>>
+/******************/
+
+<Key - QuizNumber>   //Key is the number of Quiz on board
+Value
+1. ActualQuizNumber
+2. SenderIDs
+3. GinvenAnswer
+4. CorrectAnswer
+5. CorrectOrincorrect
+
+
+
+
+
+/*********************/
+PredefinedPoll:              A map of <int, list<char*>>. Same as PredefinedQuiz
+/******************/
+<Key - PollNumber>
+1. PollStatement
+2. Choice A
+3. Choice B
+4. Choice C
+
+
+/***************/
+PollOpenOrClose      //An array with 300 elements for 100 predefined Poll
+/**************/
+1. ActualPollNumvwe
+2. OpenOrClose //1 = Open, 0 = Close
+
+
+
+/*********************/
+PollPerformance:              A map of <int, list<int>>
+/******************/
+
+<Key - QuizNumber>   //Key is the number of Quiz on board
+Value
+1. ActualPollNumber
+2. SenderIDs
+3. ChoiceAVoter
+4. ChoiceBVoter
+5. ChoiceCVoter
+
+
+
+
+
+
+
+
